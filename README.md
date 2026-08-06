@@ -1,5 +1,3 @@
-My AI engineering journey through the PACI Specialization.
-
 My AI engineering journey through the PACI AI Specialization.
 
 This repository contains all of my notes, resources, projects, etc.
