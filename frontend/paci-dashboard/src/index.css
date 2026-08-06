@@ -1,0 +1,165 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/*
+ * Dark mode is applied via a `.dark` class on <html>, toggled by the
+ * theme system (see shared/hooks/use-theme.ts). This is the standard
+ * shadcn/ui v4 dark-mode variant strategy.
+ */
+@custom-variant dark (&:is(.dark *));
+
+/* -------------------------------------------------------------------- */
+/* Design tokens                                                        */
+/*                                                                      */
+/* Palette is deliberately not the shadcn default zinc/slate: a violet  */
+/* primary (distinct from any Anthropic/Claude product accent) paired   */
+/* with a dedicated four-step "mastery" scale (introduced -> practiced  */
+/* -> applied -> mastered) that mirrors the Skill/Competency model in   */
+/* PRD §21 and SDD §6 — the one place this app takes a real visual      */
+/* stance, used consistently for skill badges, milestones, and project  */
+/* status rather than as one-off decoration.                            */
+/* -------------------------------------------------------------------- */
+
+:root {
+  --radius: 0.625rem;
+
+  --background: hsl(240 20% 99%);
+  --foreground: hsl(240 10% 10%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 10%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 10%);
+
+  --primary: hsl(255 60% 58%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(240 10% 95%);
+  --secondary-foreground: hsl(240 10% 15%);
+
+  --muted: hsl(240 10% 95%);
+  --muted-foreground: hsl(240 5% 45%);
+
+  --accent: hsl(240 10% 95%);
+  --accent-foreground: hsl(240 10% 15%);
+
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --success: hsl(160 70% 36%);
+  --success-foreground: hsl(0 0% 100%);
+
+  --warning: hsl(38 92% 47%);
+  --warning-foreground: hsl(30 40% 12%);
+
+  --border: hsl(240 12% 90%);
+  --input: hsl(240 12% 90%);
+  --ring: hsl(255 60% 58%);
+
+  /* Mastery scale — Introduced -> Practiced -> Applied -> Mastered (PRD §21.1) */
+  --mastery-introduced: hsl(240 8% 72%);
+  --mastery-practiced: hsl(255 50% 68%);
+  --mastery-applied: hsl(255 60% 58%);
+  --mastery-mastered: hsl(160 70% 36%);
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+.dark {
+  --background: hsl(228 15% 6%);
+  --foreground: hsl(220 15% 92%);
+
+  --card: hsl(228 14% 9%);
+  --card-foreground: hsl(220 15% 92%);
+
+  --popover: hsl(228 14% 9%);
+  --popover-foreground: hsl(220 15% 92%);
+
+  --primary: hsl(255 70% 68%);
+  --primary-foreground: hsl(240 20% 10%);
+
+  --secondary: hsl(228 12% 14%);
+  --secondary-foreground: hsl(220 15% 92%);
+
+  --muted: hsl(228 12% 14%);
+  --muted-foreground: hsl(220 8% 60%);
+
+  --accent: hsl(228 12% 16%);
+  --accent-foreground: hsl(220 15% 92%);
+
+  --destructive: hsl(0 70% 58%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --success: hsl(160 65% 48%);
+  --success-foreground: hsl(160 40% 8%);
+
+  --warning: hsl(38 92% 58%);
+  --warning-foreground: hsl(30 40% 10%);
+
+  --border: hsl(228 12% 18%);
+  --input: hsl(228 12% 18%);
+  --ring: hsl(255 70% 68%);
+
+  --mastery-introduced: hsl(228 8% 30%);
+  --mastery-practiced: hsl(255 45% 48%);
+  --mastery-applied: hsl(255 70% 68%);
+  --mastery-mastered: hsl(160 65% 48%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-mastery-introduced: var(--mastery-introduced);
+  --color-mastery-practiced: var(--mastery-practiced);
+  --color-mastery-applied: var(--mastery-applied);
+  --color-mastery-mastered: var(--mastery-mastered);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  /* Numeric/data-heavy content (durations, scores, dates) uses the mono
+     face throughout the app — a functional distinction, not decoration,
+     so metrics visually separate from prose at a glance. */
+  .font-data {
+    @apply font-mono tabular-nums;
+  }
+}
