@@ -1,0 +1,265 @@
+# Python Fundamentals Exercises:
+
+---
+
+## 1. Variables
+
+### Exercise 1 — Personal Information
+
+Create variables for:
+
+* Your name
+* Your age
+* Your city
+* Your favorite programming language
+
+Print each value.
+
+---
+
+### Exercise 2 — Variable Reassignment
+
+Create a variable called `score` with the value `50`.
+
+Then:
+
+1. Print it.
+2. Change it to `100`.
+3. Print it again.
+
+---
+
+### Exercise 3 — Multiple Variables
+
+Create three variables:
+
+```python
+name
+age
+is_student
+```
+
+Assign appropriate values to them and print their values and types.
+
+---
+
+## 2. Data Types
+
+### Exercise 4 — Identify the Types
+
+Create the following values:
+
+```python
+42
+3.14
+"Python"
+True
+[1, 2, 3]
+(1, 2, 3)
+{"name": "Rafay"}
+{1, 2, 3}
+```
+
+Use `type()` to determine the type of each value.
+
+---
+
+### Exercise 5 — Type Conversion
+
+Create:
+
+```python
+age = "16"
+```
+
+Convert it into an integer and add `4` to it.
+
+Expected result:
+
+```text
+20
+```
+
+---
+
+### Exercise 6 — Temperature
+
+Create:
+
+```python
+temperature = "25.5"
+```
+
+Convert it to a `float` and print its type and value.
+
+---
+
+## 3. Mutable vs Immutable
+
+### Exercise 7 — Mutable List
+
+Create:
+
+```python
+numbers = [1, 2, 3]
+```
+
+Add `4` to the list without creating a new list.
+
+Print the result.
+
+---
+
+### Exercise 8 — Immutable String
+
+Create:
+
+```python
+name = "Python"
+```
+
+Try to change the first character to `"J"`.
+
+Observe what happens.
+
+Then create the string:
+
+```text
+Jython
+```
+
+using another approach.
+
+---
+
+### Exercise 9 — Mutation Experiment
+
+Create:
+
+```python
+numbers = [1, 2, 3]
+copy = numbers
+```
+
+Add `4` to `numbers`.
+
+Print both variables.
+
+### Question
+
+Why does `copy` also contain `4`?
+
+Write your explanation below your code.
+
+---
+
+## 4. Sequences
+
+### Exercise 10 — List Indexing
+
+Create:
+
+```python
+languages = ["Python", "JavaScript", "C++", "Java"]
+```
+
+Print:
+
+* The first element
+* The last element
+* The second element
+
+---
+
+### Exercise 11 — String Indexing
+
+Create:
+
+```python
+word = "Python"
+```
+
+Print:
+
+* The first character
+* The third character
+* The last character
+
+---
+
+### Exercise 12 — Tuple
+
+Create a tuple containing five programming languages.
+
+Print:
+
+* The first element
+* The last element
+* The number of elements
+
+---
+
+## 5. Mixed Practice
+
+### Exercise 13 — Student Profile
+
+Create a dictionary representing a student.
+
+It should contain:
+
+```text
+name
+age
+grade
+subjects
+```
+
+Use appropriate data types for each value.
+
+Print the dictionary and the type of each value.
+
+---
+
+### Exercise 14 — Data Type Challenge
+
+Without running the code first, predict the output:
+
+```python
+x = 10
+y = "10"
+
+print(type(x))
+print(type(y))
+```
+
+Then run the code and compare your prediction.
+
+---
+
+### Exercise 15 — Mutable or Immutable?
+
+For each type below, identify whether it is mutable or immutable:
+
+```text
+int
+float
+str
+bool
+list
+tuple
+dict
+set
+```
+
+Then verify your answers using Python experiments where possible.
+
+---
+
+## Progress
+
+* [ ] Variables
+* [ ] Data Types
+* [ ] Mutable & Immutable Objects
+* [ ] Sequences
+* [ ] Mixed Practice
+* [ ] Reflection
