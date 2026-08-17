@@ -19,6 +19,7 @@ phase-01-python/
 ├── README.md
 ├── fundamentals.md
 └── exercises/
+└── quiz/
 
 ## Approach
 
