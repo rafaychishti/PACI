@@ -1,0 +1,1 @@
+<img width="959" height="4946" alt="screencapture-portal-paciprogram-org-student-course-69f0687f7c58ac282b3743d8-2026-08-18-01_54_20" src="https://github.com/user-attachments/assets/79c7fd50-f65e-4300-b88d-6bf0de7f0844" />
